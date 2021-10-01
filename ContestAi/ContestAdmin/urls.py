@@ -27,5 +27,5 @@ urlpatterns = [
     path('language/add-language',  views.addLanguage, name='addLanguage'),
     path('language/list-language',  views.listLanguage, name='listLanguage'),
     path('language/',  views.listLanguage, name='listLanguage'),
-     path('language/delete-language/<int:pk>/',  views.deleteLanguage, name='deleteLanguage'),
+    path('language/delete-language/<int:pk>/',  views.deleteLanguage, name='deleteLanguage'),
 ]
