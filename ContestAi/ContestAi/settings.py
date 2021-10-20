@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'devs',
     'Auth',
     'ContestAdmin',
+    'testapp',
     'ContestParticipant.apps.ContestparticipantConfig'
 ]
 
