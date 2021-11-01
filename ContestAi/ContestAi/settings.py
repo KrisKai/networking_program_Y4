@@ -40,12 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'defender',
+
 
     'django_rq',
     'devs',
     'Auth',
     'ContestAdmin',
-    'testapp',
     'ContestParticipant.apps.ContestparticipantConfig'
 ]
 
@@ -57,7 +58,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'defender.middleware.FailedLoginMiddleware',
 ]
+
+DEFENDER_LOCKOUT_TEMPLATE = 'defender_lockout.html'
 
 ROOT_URLCONF = 'ContestAi.urls'
 

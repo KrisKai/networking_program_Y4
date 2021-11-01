@@ -4,6 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls, name='adminSite'),
+    path('admin/defender/', include('defender.urls')), # defender admin
+    path('defender/', include('defender.urls')), # defender admin
     # path('', include('devs.urls')),
     path('', include('Auth.urls')),
     path('', include('ContestHolder.urls')),
