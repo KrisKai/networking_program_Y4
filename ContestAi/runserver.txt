@@ -1,0 +1,11 @@
+cd ContestAi/ 
+python3 manage.py migrate 
+python3 manage.py runserver 0:8000
+python3 manage.py rqworker 
+python3 pagekite.py 8000 contestlau.pagekite.me
+
+#docker
+sudo docker-compose up -d : tao va khoi dong cac container
+sudo docker-compose down : tat va xoa cac container
+sudo docker-compose start : khoi dong service
+sudo docker-compose stop : tat service
