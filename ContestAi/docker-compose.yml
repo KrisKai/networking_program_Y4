@@ -7,15 +7,22 @@ web:
 web_migrade:
   extends:
     service: web
-  command: python manage.py migrate
+  command: python3 manage.py migrate
 web_run:
   extends:
     service: web
-  command: python manage.py runserver 0.0.0.0:8000
+  command: python3 manage.py runserver 0.0.0.0:8000
   ports:
     - "8000:8000"
-web_regid:
+web_apply:
   extends:
     service: web
-  command: python manage.py rqworker
-    
+  command: python3 manage.py rqworker
+redis:
+  container_name: "redis"
+  image: redis:alpine
+  command: redis-server /usr/local/etc/redis/redis.conf --requirepass 123qwe!@#
+  ports:
+   - "6379:6379"
+  volumes:
+    - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
